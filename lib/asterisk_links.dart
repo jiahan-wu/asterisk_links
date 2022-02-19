@@ -9,7 +9,7 @@ class AsteriskLinks {
     final String? webpageUrlString =
         await _channel.invokeMethod('getWebpageUrlString');
     if (webpageUrlString != null) {
-      final uri = Uri.parse(webpageUrlString);
+      final uri = Uri.tryParse(webpageUrlString);
       return uri;
     }
     return null;
